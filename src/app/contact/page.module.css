@@ -1,5 +1,59 @@
 .contact_container
 {
-    background-color: #fff;
-    color: #111;
+    background-color: #111;
+    color: #fff;
+    margin: 48px 0px;
+}
+
+.title {
+  font-size: 64px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 100px;
+}
+
+.imgContainer {
+  flex: 1;
+  height: 400px;
+  position: relative;
+}
+
+.image {
+  object-fit: contain;
+  border-radius: 10px;
+  /* animation: move 3s infinite ease alternate; */
+}
+
+@keyframes move {
+  from {
+    transform: translateY(-15px);
+  }
+  to {
+    transform: translateY(0px) scale(1.03);
+  }
+}
+
+.form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input,
+.textArea {
+  padding: 14px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #bbb;
+  border: 2px solid #bbb;
+  font-size: 20px;
+  font-weight: bold;
 }

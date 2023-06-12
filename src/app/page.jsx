@@ -13,7 +13,7 @@ export default function Home() {
           quidem voluptatibus, velit ea minus ex fuga!
         </p>
         <div className={styles.container}>
-        <button className={styles.button}>See More</button>
+        <button className="button">See More</button>
         </div>
       </div>
       <div className={styles.image_container}>

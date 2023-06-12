@@ -1,0 +1,18 @@
+.image_container > img
+{
+    object-fit: contain;
+    padding: 0px 100px;
+}
+.text_content_container
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 44px;
+    padding: 24px 80px;
+}
+
+.text_content_container_one,.text_content_container_two
+{
+    flex: 1;
+}

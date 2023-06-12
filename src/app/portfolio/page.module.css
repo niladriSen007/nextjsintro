@@ -1,0 +1,50 @@
+.mainTitle {
+    font-size: 70px;
+    margin: 48px 0px;
+  }
+  
+  .container {
+    height: 80vh;
+  }
+  
+  .selectTitle {
+    margin: 20px 0px;
+  }
+  
+  .items {
+    display: flex;
+    gap: 50px;
+  }
+  
+  .item {
+    border: 5px solid #bbb;
+    border-radius: 5px;
+    width: 310px;
+    height: 200px;
+    position: relative;
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    
+  }
+  
+  .item:nth-child(1) {
+    background: url("/undertaker.jpg");
+  }
+  .item:nth-child(2) {
+    background: url("/john_1.jpg");
+  }
+  .item:nth-child(3) {
+    background: url("/r1.jpg");
+  }
+  
+  .title {
+    position: absolute;
+    right: 10px;
+    bottom: 4px;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .item:hover .title {
+    color: #53c28b;
+  }
