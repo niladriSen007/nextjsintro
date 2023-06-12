@@ -3,7 +3,7 @@ import styles from "./page.module.css";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Lama Dev Contact Information",
+  title: "Niladri Sen Contact Page",
   description: "This is Contact Page",
 };
 
