@@ -12,34 +12,27 @@ const Category = ({ params }) => {
       </h1>
 
       <div className={styles.item}>
+        <div className={styles.imgContainer}>
+          <Image
+            className={styles.img}
+            width={160}
+            height={160}
+            src={"/john.jpg"}
+            alt=""
+          />
+        </div>
         <div className={styles.content}>
           <h1 className={styles.title}>John Cena</h1>
-          <p className={styles.desc}>
+          {/* <p className={styles.desc}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
             voluptatem pariatur autem vitae id officiis laudantium doloremque at
             nemo molestiae.
-          </p>
+          </p> */}
           <button className="button">See More</button>
-        </div>
-        <div className={styles.imgContainer}>
-          <Image className={styles.img} width={500} height={500} src={"/john.jpg"} alt="" />
         </div>
       </div>
 
-      <div className={styles.item}>
-        <div className={styles.content}>
-          <h1 className={styles.title}>John Cena</h1>
-          <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt
-            voluptatem pariatur autem vitae id officiis laudantium doloremque at
-            nemo molestiae.
-          </p>
-          <button className="button">See More</button>
-        </div>
-        <div className={styles.imgContainer}>
-          <Image className={styles.img} width={400} height={400} src={"/john.jpg"} alt="" />
-        </div>
-      </div>
+     
     </div>
   );
 };

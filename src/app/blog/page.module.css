@@ -1,4 +1,10 @@
+.mainContainer{
+  height: 100vh;
 
+}
+.mainContainer::-webkit-scrollbar {
+  display: none;
+}
 .container {
     display: flex;
     align-items: center;
