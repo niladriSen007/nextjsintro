@@ -7,7 +7,7 @@ const DarkmodeToggle = () => {
     //const mode="dark"
 
     const {toggleMode,mode} = useContext(ThemeContext)
-    console.log(mode)
+    // console.log(mode)
   return (
     <div className={styles.container}  onClick={toggleMode}>
       <div className={styles.icon}>🌙</div>

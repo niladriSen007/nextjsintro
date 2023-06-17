@@ -1,23 +1,49 @@
 import React from "react";
 import styles from "./page.module.css";
 import Image from "next/image";
+import {notFound} from "next/navigation"
 
-const Post = () => {
+
+async function getData(id) {
+  //static data fetching - means data will never change
+  // const res = await fetch('https://jsonplaceholder.typicode.com/posts',  {cache: 'force-cache'})
+
+  //data updates after each interval
+  // const res = await fetch('https://jsonplaceholder.typicode.com/posts', { next: { revalidate: 10 } })
+
+  //data updates each and every moment
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    cache: "no-store",
+  });
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    // throw new Error("Failed to fetch data");
+    //or
+    notFound()
+  }
+
+  return res.json();
+}
+
+const Post = async({params}) => {
+
+  const data = await getData(params.id)
+  const {title,body} = data;
+
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>
         <div className={styles.info}>
           {/* <h1 className={styles.title}>{data.title}</h1> */}
           <h1 className={styles.title}>
-            Undertaker has announced his retirement
+            {title}
           </h1>
           <p className={styles.desc}>
             {/* {data.desc} */}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic autem
-            explicabo soluta nemo aliquid ipsa ut doloribus aperiam minima.
-            Aspernatur blanditiis maxime sed voluptas, maiores voluptatibus! Nam
-            veniam, accusamus, pariatur quas quia officia molestiae distinctio
-            nisi reiciendis quos mollitia tempora!
+           {body}
           </p>
           <div className={styles.author}>
             <Image
@@ -46,28 +72,7 @@ const Post = () => {
       <div className={styles.content}>
         {/* <p className={styles.text}>{data.content}</p> */}
         <p className={styles.text}>
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio, magni
-          fugit repellendus voluptatibus eos iure, mollitia itaque minus ad
-          explicabo iste molestias porro tempore! Tempora beatae mollitia,
-          veniam reprehenderit dignissimos ab fuga, at optio nihil autem numquam
-          officia minima esse iste voluptatem est illo quos corrupti doloribus!
-          Minus itaque debitis hic neque autem vitae suscipit temporibus
-          exercitationem, ducimus doloribus alias asperiores numquam sint eos
-          <br />
-          natus repellat. Iure architecto quas ipsa natus ipsam exercitationem
-          magni inventore nostrum est laudantium neque numquam magnam explicabo
-          aspernatur, quisquam libero quia velit. Culpa, tempora error! Pariatur
-          quidem nostrum quod non voluptas recusandae nam maxime dolor<br /><br />
-          consectetur ullam minus delectus, distinctio praesentium dignissimos
-         ores
-          repellendus soluta rerum ullam dolore asperiores consectetur explicabo
-          aut consequuntur! Explicabo aperiam commodi aliquid repellendus qui et
-          dolores quod odit? Doloribus nobis, perspiciatis similique magni
-          temporibus, cumque doloremque beatae aspernatur repellat odit
-     
-       
-        
-          ipsa quam laudantium nam atque architecto provident. Asperiores.
+         {body}
         </p>
       </div>
     </div>

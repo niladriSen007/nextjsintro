@@ -124,3 +124,8 @@ a{
 .light a{
   color: #111;
 }
+
+
+.theme{
+  transition: all 1s ease-in-out;
+}
