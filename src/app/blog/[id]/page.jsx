@@ -12,7 +12,7 @@ async function getData(id) {
   // const res = await fetch('https://jsonplaceholder.typicode.com/posts', { next: { revalidate: 10 } })
 
   //data updates each and every moment
-  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+  const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
     cache: "no-store",
   });
 
@@ -29,8 +29,11 @@ async function getData(id) {
 
 const Post = async({params}) => {
 
+  console.log(params)
   const data = await getData(params.id)
-  const {title,body} = data;
+  
+  console.log(data)
+  // const {title,body} = data;
 
 
   return (
@@ -39,11 +42,13 @@ const Post = async({params}) => {
         <div className={styles.info}>
           {/* <h1 className={styles.title}>{data.title}</h1> */}
           <h1 className={styles.title}>
-            {title}
+            {/* {title} */}
+            edrkj.drkljbf
           </h1>
           <p className={styles.desc}>
             {/* {data.desc} */}
-           {body}
+           {/* {body} */}
+           erfref
           </p>
           <div className={styles.author}>
             <Image
@@ -72,7 +77,8 @@ const Post = async({params}) => {
       <div className={styles.content}>
         {/* <p className={styles.text}>{data.content}</p> */}
         <p className={styles.text}>
-         {body}
+         {/* {body} */}
+         srdzfdrfg
         </p>
       </div>
     </div>
