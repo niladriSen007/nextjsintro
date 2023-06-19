@@ -12,7 +12,7 @@ async function getData() {
   // const res = await fetch('https://jsonplaceholder.typicode.com/posts', { next: { revalidate: 10 } })
 
   //data updates each and every moment
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts", {
+  const res = await fetch("http://localhost:3000/api/posts", {
     cache: "no-store",
   });
 
@@ -31,14 +31,14 @@ const Blog = async () => {
     <div className={styles.mainContainer}>
       {data.map((item) => (
         <Link
-          href={`/blog/${item.id}`}
+          href={`/blog/${item._id}`}
           className={styles.container}
           key={item.id}
         >
           <div className={styles.imageContainer}>
             <Image
-              // src={item.img}
-              src={"/undertaker.jpg"}
+              src={item.img}
+              // src={"item.img"}
               alt=""
               width={400}
               height={250}

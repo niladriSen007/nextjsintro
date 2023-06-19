@@ -1,4 +1,4 @@
-import { ThemeProvider } from "../../context/ThemeContext";
+import { ThemeProvider } from "../context/ThemeContext";
 import Footer from "./components/footer/Footer";
 import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
